@@ -47,6 +47,9 @@ sed -i "s,^Exec=.*,Exec=osso-xterm -e \"sudo $sd/snoopy.sh\"," ./setup/snoopy.de
 cp ./setup/snoopy.desktop /usr/share/applications/hildon/
 cp ./setup/snoopy.png /opt/usr/share/pixmaps/
 
+# Make all desktop icons executable - fix for snoopy.desktop
+chmod -R 777 /usr/share/applications/hildon/
+
 #NB Don't manually update /etc/sudoers on N900
 echo "user ALL = NOPASSWD: $sd/snoopy.sh" > /etc/sudoers.d/snoopy.sudoers
 update-sudoers
