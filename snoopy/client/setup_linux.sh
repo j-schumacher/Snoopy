@@ -13,19 +13,15 @@ echo "+-----------------------------------------------------------------------+
 +-----------------------------------------------------------------------+
 + This script has been tested on a BackTrack5 installation. I'll try	+
 + install the following packages anway:					+
-+ -dnsmasq, tshark, openvpn, rsync, netcat, macchanger			+
++ -dnsmasq, tshark, openvpn, rsync, netcat, macchanger, psmisc, iptables+
++  aircrack-ng                                                          +
 +-----------------------------------------------------------------------+
 "
 
 #Set current path in config
 sd=$(cd $(dirname "$0"); pwd)
 
-apt-get install -y dnsmasq
-apt-get install -y tshark
-apt-get install -y openvpn
-apt-get install -y rsync
-apt-get install -y netcat
-apt-get install -y macchanger
+apt-get install -y dnsmasq tshark openvpn rsync netcat macchanger aircrack-ng psmisc traceroute iptables
 
 /etc/init.d/ssh start
 
